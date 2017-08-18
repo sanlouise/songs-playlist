@@ -1,34 +1,22 @@
-import React, { Component } from 'react';
-import PlayListItem from '../PlayListItem/index.js'
+import React, { Component, PropTypes } from 'react';
+import map from 'lodash/map';
 
-class PlayList extends Component {
+const PlayList = (props) => (
+  <div className="">
+    {map(props.songs, (song) => (
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      songs: {}
-    }
-  }
+      <div className="song">
+        {song.userName}
+        {song.songArtist}
+        {song.songTitle}
+        {song.songNotes}
+      </div>
+    ))}
+  </div>
+);
 
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData = (e) => {
-    e.preventDefault();
-    fetch('https://tiny-lasagna-server.herokuapp.com/collections/playlisting').then(results => {
-      return results.json();
-    }).then(data => {
-      this.setState({ songs: data });
-    })
-  }
-
-  render () {
-    return (
-    <div className=''>
-      <PlayListItem songs={this.state.songs}/>
-    </div>)
-  }
-}
+PlayList.propTypes = {
+  songs: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default PlayList;

@@ -2,13 +2,18 @@
 import React, { PropTypes } from 'react';
 
 // Stateless component / Functional component
-const Field = (props) => (
+const Field = ({
+  label,
+  onChange,
+  textarea,
+  value,
+}) => (
   <div>
-    <label>{props.label}</label>
+    <label>{label}</label>
     <input
-      onChange={props.onChange}
-      type={props.textarea ? 'textarea' : 'text'}
-      value={props.value}
+      onChange={onChange}
+      type={textarea ? 'textarea' : 'text'}
+      value={value}
     />
   </div>
 );
@@ -16,6 +21,7 @@ const Field = (props) => (
 Field.propTypes = {
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  textarea: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired,
 };
 
