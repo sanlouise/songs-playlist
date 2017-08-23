@@ -5,7 +5,6 @@ import reverse from 'lodash/reverse';
 
 const PlayList = (props) => (
   <div className={`results${props.shelling ? ' shell' : ''}`}>
-
     <div className="shell-item">
       <div className="shell-row-long" />
       <div className="shell-row-medium" />
