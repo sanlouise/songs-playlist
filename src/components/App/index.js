@@ -49,7 +49,7 @@ class App extends Component {
   }
 
   displaySongs = (songs) => {
-    // this.setState({ songs, shelling: false });
+    this.setState({ songs, shelling: false });
   }
 
   render() {
