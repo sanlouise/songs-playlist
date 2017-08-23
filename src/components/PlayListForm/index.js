@@ -26,7 +26,7 @@ class PlayListForm extends Component {
     console.log(this.props.songArtist, this.props.songNotes)
     event.preventDefault();
     this.props.addSong(this.state);
-    this.setState = ({
+    this.setState({
       userName: '',
       songArtist: '',
       songTitle: '',

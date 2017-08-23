@@ -43,6 +43,7 @@ class App extends Component {
   addSong = (song) => {
     this.addSongToApi(song);
     const { songs } = this.state;
+    songs.push(song);
     this.setState({ songs });
   }
 
