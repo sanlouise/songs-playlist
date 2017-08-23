@@ -9,6 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      shelling: true,
       songs: [],
     };
   }
@@ -23,6 +24,7 @@ class App extends Component {
       return res.json();
     })
     .then(songs => {
+      // Stop shelling once we receive a response
       this.displaySongs(songs);
     });
   }
@@ -47,7 +49,7 @@ class App extends Component {
   }
 
   displaySongs = (songs) => {
-    this.setState({ songs });
+    // this.setState({ songs, shelling: false });
   }
 
   render() {
@@ -56,7 +58,7 @@ class App extends Component {
         <NavBar />
         <div className="app-div">
           <PlayListForm addSong={this.addSong} />
-          <PlayList songs={this.state.songs} />
+          <PlayList songs={this.state.songs} shelling={this.state.shelling} />
         </div>
       </div>
     )

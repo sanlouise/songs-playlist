@@ -7,15 +7,63 @@
   border: 1px solid #FFF;
 }
 
-.result-item {
-  width: 25em;
+/* Do not display shell-items UNLESS we have the shell class */
+.results .shell-item {
+  display: none;
+}
+
+.results.shell .shell-item {
+  align-items: flex-start;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 3px;
   color: white;
   display: flex;
   flex-direction: column;
+  padding: 1em 2em;
+  width: 25em;
+}
+
+.results.shell .shell-item div {
+  margin: 0.5em 0;
+}
+
+.results.shell .shell-row-long {
+  background: #fff;
+  border-radius: 10px;
+  height: 20px;
+  width: 100%;
+}
+
+.results.shell .shell-row-medium {
+  background: #fff;
+  border-radius: 10px;
+  height: 20px;
+  width: 90%;
+}
+
+.results.shell .shell-row-short {
+  background: #fff;
+  border-radius: 10px;
+  height: 20px;
+  width: 80%;
+}
+
+.results.shell .shell-row-shortest {
+  background: #fff;
+  border-radius: 10px;
+  height: 20px;
+  width: 70%;
+}
+
+.result-item {
   align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+  color: white;
+  display: flex;
+  flex-direction: column;
   padding: 1em 0;
+  width: 25em;
 }
 
 h4 {
