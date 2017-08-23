@@ -59,7 +59,7 @@ class PlayListForm extends Component {
             textarea={true}
             value={this.state.songNotes}
           />
-          <button type="submit">Add Artist</button>
+        <button type="submit">Add Song</button>
         </form>
       </div>
     );
