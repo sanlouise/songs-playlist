@@ -23,7 +23,7 @@ class App extends Component {
       return res.json();
     })
     .then(songs => {
-      this.addSongs(songs);
+      this.displaySongs(songs);
     });
   }
 
@@ -33,30 +33,31 @@ class App extends Component {
       body: JSON.stringify(song),
     })
     .then(res => {
-      console.log(res, "yay");
+      console.log(res, "Success");
     })
     .catch(err => {
-      console.log(err, "boo!");
+      console.log(err, "Failure");
     });
   }
 
   addSong = (song) => {
     this.addSongToApi(song);
     const { songs } = this.state;
-    songs.push(song);
     this.setState({ songs });
   }
 
-  addSongs = (songs) => {
+  displaySongs = (songs) => {
     this.setState({ songs });
   }
 
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <NavBar />
-        <PlayListForm addSong={this.addSong} />
-        <PlayList songs={this.state.songs} />
+        <div className="app-div">
+          <PlayListForm addSong={this.addSong} />
+          <PlayList songs={this.state.songs} />
+        </div>
       </div>
     )
   }

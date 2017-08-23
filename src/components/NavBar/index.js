@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import styles from './styles.css';
 
 const NavBar = () => (
-  <div className=''>
-    Your favorite music
+  <div className='Navbar'>
+    <h1>Your Favorite Music</h1>
   </div>
 )
 

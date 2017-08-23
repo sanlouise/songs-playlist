@@ -1,0 +1,10 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navbar h1 {
+  color: #FFF;
+  padding-top: 30px;
+}

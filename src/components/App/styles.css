@@ -1,24 +1,21 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background: #4776e6;
+  background: -webkit-linear-gradient(to right, #4776e6, #8e54e9); ri 5.1-6 */
+  background: linear-gradient(to right, #4776e6, #8e54e9);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.app-div {
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 100px 0;
+  background-color: #000;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.playlist-form {
+  margin-right: 20px;
 }

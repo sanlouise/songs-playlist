@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import NavBar from '../NavBar/index.js';
 import Field from '../Field/index.js';
+import styles from './styles.css';
 
 class PlayListForm extends Component {
   static propTypes = {
@@ -17,7 +18,12 @@ class PlayListForm extends Component {
     });
   }
 
+  updateField = (key, value) => {
+    this.setState({ [key]: value });
+  }
+
   handleSubmit = (event) => {
+    console.log(this.props.songArtist, this.props.songNotes)
     event.preventDefault();
     this.props.addSong(this.state);
     this.setState = ({
@@ -28,13 +34,9 @@ class PlayListForm extends Component {
     });
   }
 
-  updateField = (key, value) => {
-    this.setState({ [key]: value });
-  }
-
   render() {
     return (
-      <div className='form'>
+      <div className='playlist-form'>
         <form onSubmit={this.handleSubmit}>
           <Field
             label="Username"

@@ -1,5 +1,6 @@
 // Dependencies
 import React, { PropTypes } from 'react';
+import styles from './styles.css';
 
 // Stateless component / Functional component
 const Field = ({
@@ -9,11 +10,11 @@ const Field = ({
   value,
 }) => (
   <div>
-    <label>{label}</label>
     <input
       onChange={onChange}
       type={textarea ? 'textarea' : 'text'}
       value={value}
+      placeholder={label}
     />
   </div>
 );
