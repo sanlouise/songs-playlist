@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       songs: [],
+      shelling: true,
     };
   }
 
@@ -48,7 +49,7 @@ class App extends Component {
   }
 
   displaySongs = (songs) => {
-    this.setState({ songs });
+  this.setState({ songs, shelling: false });
   }
 
   render() {
@@ -57,7 +58,7 @@ class App extends Component {
         <NavBar />
         <div className="app-div">
           <PlayListForm addSong={this.addSong} />
-          <PlayList songs={this.state.songs} />
+           <PlayList songs={this.state.songs} shelling={this.state.shelling} />
         </div>
       </div>
     )
